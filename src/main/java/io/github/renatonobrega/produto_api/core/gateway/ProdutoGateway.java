@@ -8,7 +8,7 @@ public interface ProdutoGateway {
 
     Produto cadastrar(Produto produto);
 
-    Produto buscarPorId(String id);
+    Produto buscarPorId(Long id);
 
     Produto buscarPorNome(String nome);
 
