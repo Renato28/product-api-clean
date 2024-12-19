@@ -8,9 +8,9 @@ public interface ProdutoGateway {
 
     Produto cadastrar(Produto produto);
 
-    Produto findById(String id);
+    Produto buscarPorId(String id);
 
-    Produto findByNome(String nome);
+    Produto buscarPorNome(String nome);
 
     List<Produto> listar();
 }
