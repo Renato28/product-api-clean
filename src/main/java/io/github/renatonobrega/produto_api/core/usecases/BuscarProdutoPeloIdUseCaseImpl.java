@@ -12,7 +12,7 @@ public class BuscarProdutoPeloIdUseCaseImpl implements BuscarProdutoPeloIdUseCas
     }
 
     @Override
-    public Produto execute(String id) {
+    public Produto execute(Long id) {
         return produtoGateway.buscarPorId(id);
     }
 }

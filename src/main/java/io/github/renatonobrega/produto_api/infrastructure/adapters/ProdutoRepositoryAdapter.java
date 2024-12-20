@@ -4,18 +4,22 @@ import io.github.renatonobrega.produto_api.core.entities.Produto;
 import io.github.renatonobrega.produto_api.core.gateway.ProdutoGateway;
 import io.github.renatonobrega.produto_api.infrastructure.persistence.ProdutoEntity;
 import io.github.renatonobrega.produto_api.infrastructure.persistence.ProdutoRepository;
-import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
 @Component
-@RequiredArgsConstructor
 public class ProdutoRepositoryAdapter implements ProdutoGateway {
 
     private final ProdutoRepository produtoRepository;
     private final ProdutoEntityMapper produtoEntityMapper;
+
+    public ProdutoRepositoryAdapter(ProdutoRepository produtoRepository,
+                                    ProdutoEntityMapper produtoEntityMapper) {
+        this.produtoRepository = produtoRepository;
+        this.produtoEntityMapper = produtoEntityMapper;
+    }
 
     @Override
     public Produto cadastrar(Produto produto) {
